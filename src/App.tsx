@@ -1,33 +1,38 @@
-import React, {useState} from 'react';
-import s from './App.module.scss'
+import React, { useState } from "react";
+import s from "./App.module.scss";
 import Input from "./components/Input/Input";
 
 function App() {
     const [values, setValues] = useState({
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
+        username: undefined,
+        email: undefined,
+        password: undefined,
+        confirmPassword: undefined
     });
 
-    const inputs = [
+    const inputs: {
+        id: string;
+        name: keyof typeof values;
+        type: string;
+        placeholder: string;
+    }[] = [
         {
-        id: "username",
-        name: "UserName",
-        type: "text",
-        placeholder: "Username",
+            id: "username",
+            name: "username",
+            type: "text",
+            placeholder: "Username"
         },
         {
             id: "email",
-            name: "Email",
+            name: "email",
             type: "text",
-            placeholder: "@gmail.com",
-        },
-    ]
+            placeholder: "@gmail.com"
+        }
+    ];
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValues({...values, [e.target.name]: e.target.value});
-    }
+        setValues({ ...values, [e.target.id]: e.target.value });
+    };
 
     return (
         <div className={s.app}>
