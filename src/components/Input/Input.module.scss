@@ -15,10 +15,33 @@
   background-color: transparent;
   border: 1px solid #ab62f5;
   border-radius: 8px;
-  padding: 5px 15px;
+  padding: 15px 5px;
   transition: 0.3s ease-in-out;
 
   &:hover {
     border: 1px solid rebeccapurple;
   }
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid rebeccapurple;
+  }
+
+  &:invalid[focused="true"] {
+    border: 1px solid red;
+  }
+
+  &:invalid[focused="true"] ~ span {
+    display: block;
+  }
+}
+
+.massage {
+  color: red;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin-bottom: 16px;
+  display: none;
 }
