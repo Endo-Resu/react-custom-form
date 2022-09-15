@@ -26,6 +26,7 @@ button {
   border: none;
   background: none;
   padding: 0;
+  cursor: pointer;
 }
 
 html {
@@ -48,4 +49,12 @@ img {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
